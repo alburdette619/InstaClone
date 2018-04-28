@@ -6,6 +6,7 @@ defaults: &defaults
 version: 2
 jobs:
   setup:
+    <<: *defaults
     steps:
       - checkout
 
@@ -32,6 +33,7 @@ jobs:
             - node_modules
 
   test:
+    <<: *defaults
     steps:
       - checkout
 
@@ -58,6 +60,7 @@ jobs:
           path: test-results
 
   expo:
+    <<: *defaults
     steps:
       - checkout
 
@@ -70,7 +73,7 @@ jobs:
           export PATH="$PATH:$( yarn global bin )"
           exp login --username $EXPO_USER_NAME --password $EXPO_PASSWORD
           exp publish -s $EXPO_USER_NAME
-          
+
 workflows:
   version: 2
   setup-test-expo:
