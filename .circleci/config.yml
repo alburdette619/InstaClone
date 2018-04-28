@@ -33,6 +33,22 @@ jobs:
           paths:
             - node_modules
 
+  standards:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: ~/InstaClone
+
+      - run:
+          name: Check Prettier Formatting
+          command: yarn run ci-format
+
+      - run:
+          name: Check Linting Rules
+          command: yarn run ci-lint
+
   test:
     <<: *defaults
     steps:
@@ -76,13 +92,17 @@ jobs:
 
 workflows:
   version: 2
-  setup-test-expo:
+  setup_accept_expo:
     jobs:
       - setup
+      - standards:
+          requires:
+            - setup
       - test:
           requires:
             - setup
       - expo:
           requires:
+            - standards
             - test
       
