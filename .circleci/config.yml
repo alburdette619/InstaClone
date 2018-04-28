@@ -68,11 +68,11 @@ jobs:
           at: ~/InstaClone
                 
       - run:
-        name: Deploying to Expo
-        command: |
-          export PATH="$PATH:$( yarn global bin )"
-          exp login --username $EXPO_USER_NAME --password $EXPO_PASSWORD
-          exp publish -s $EXPO_USER_NAME
+          name: Deploying to Expo
+          command: |
+            export PATH="$PATH:$( yarn global bin )"
+            exp login --username $EXPO_USER_NAME --password $EXPO_PASSWORD
+            exp publish -s $EXPO_USER_NAME
 
 workflows:
   version: 2
