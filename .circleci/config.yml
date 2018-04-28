@@ -84,6 +84,5 @@ workflows:
             - setup
       - expo:
           requires:
-            - setup
             - test
       
