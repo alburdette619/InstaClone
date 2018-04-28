@@ -92,7 +92,7 @@ jobs:
 
 workflows:
   version: 2
-  setup-standards-test-expo:
+  setup_accept_expo:
     jobs:
       - setup
       - standards:
