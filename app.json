@@ -1,6 +1,18 @@
 {
   "expo": {
-    "sdkVersion": "26.0.0",
+    "name": "InstaClone",
+    "version": "1.0.0",
+    "description":
+      "A limited functionality Instagram Clone for personal image viewing",
+    "slug": "instaclone",
+    "privacy": "public",
+    "sdkVersion": "27.0.0",
+    "githubUrl": "https://github.com/alburdette619/InstaClone",
+    "primaryColor": "#19a0d4",
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#19a0d4"
+    },
     "packagerOpts": {
       "sourceExts": ["ts", "tsx"],
       "transformer": "node_modules/react-native-typescript-transformer/index.js"

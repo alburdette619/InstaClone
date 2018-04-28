@@ -1,0 +1,88 @@
+defaults: &defaults
+  working_directory: ~/InstaClone
+  docker:
+    - image: circleci/node:8
+
+version: 2
+jobs:
+  setup:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+
+      - restore_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+
+      - run: yarn install
+
+      - save_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+          paths:
+            - ~/.cache/yarn
+
+      - save_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+          paths:
+            - node_modules
+
+      - persist_to_workspace:
+          root: ~/InstaClone
+          paths:
+            - node_modules
+
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: ~/InstaClone
+
+      - run:
+          name: jest tests
+          command: |
+            mkdir -p test-results/jest
+            yarn run test -- --ci --testResultsProcessor="jest-junit"
+          environment:
+            JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
+
+      - store_test_results:
+          path: test-results
+
+      - store_artifacts:
+          path: test-results
+
+  expo:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: ~/InstaClone
+
+      - run:
+          name: Installing exp
+          command: yarn global add exp
+                
+      - run:
+          name: Deploying to Expo
+          command: |
+            export PATH="$PATH:$( yarn global bin )"
+            exp login --username $EXPO_USER_NAME --password $EXPO_PASSWORD
+            exp publish -s $EXPO_USER_NAME -q
+
+workflows:
+  version: 2
+  setup-test-expo:
+    jobs:
+      - setup
+      - test:
+          requires:
+            - setup
+      - expo:
+          requires:
+            - test
+      
