@@ -95,7 +95,7 @@ workflows:
   setup-standards-test-expo:
     jobs:
       - setup
-      - standards"
+      - standards:
           requires:
             - setup
       - test:
