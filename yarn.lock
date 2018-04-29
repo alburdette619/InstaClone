@@ -577,6 +577,26 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-1.2.0.tgz#81a6731ce4df43619e5c8c945383b3e62a89ea86"
 
+"@types/expo@^25.0.9":
+  version "25.0.9"
+  resolved "https://registry.yarnpkg.com/@types/expo/-/expo-25.0.9.tgz#b248c4888b5d26d8a70c3b5269e8732276dc9aec"
+  dependencies:
+    "@types/fbemitter" "*"
+    "@types/react" "*"
+    "@types/react-native" "*"
+
+"@types/expo__vector-icons@^6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@types/expo__vector-icons/-/expo__vector-icons-6.2.2.tgz#fe8a8a6fd3536ecc093476d19d039bbcb9e2f8c9"
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
+    "@types/react-native-vector-icons" "*"
+
+"@types/fbemitter@*":
+  version "2.0.32"
+  resolved "https://registry.yarnpkg.com/@types/fbemitter/-/fbemitter-2.0.32.tgz#8ed204da0f54e9c8eaec31b1eec91e25132d082c"
+
 "@types/glob@*":
   version "5.0.35"
   resolved "https://registry.yarnpkg.com/@types/glob/-/glob-5.0.35.tgz#1ae151c802cece940443b5ac246925c85189f32a"
@@ -597,11 +617,31 @@
   version "10.0.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.0.0.tgz#c40f8e07dce607d3ef25a626b93a6a7cdcf97881"
 
+"@types/react-native-vector-icons@*":
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/@types/react-native-vector-icons/-/react-native-vector-icons-4.6.1.tgz#a9b2ee1a4b297b87a9917337aeee404c36fda8c2"
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
+
+"@types/react-native@*":
+  version "0.55.8"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.55.8.tgz#31a6b42852088742e7464876742081a2c1ef3fe7"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-native@^0.52.21":
   version "0.52.25"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.52.25.tgz#78c0e6049d4dc0a7af7d4024baac28ae922bedaf"
   dependencies:
     "@types/react" "*"
+
+"@types/react-navigation@^1.5.9":
+  version "1.5.9"
+  resolved "https://registry.yarnpkg.com/@types/react-navigation/-/react-navigation-1.5.9.tgz#a3e6d0646131ffbc3ee228a82fa1f19b140edfd7"
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
 
 "@types/react-test-renderer@^16.0.0":
   version "16.0.1"

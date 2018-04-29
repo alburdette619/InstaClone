@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "@types/expo": "^25.0.9",
+    "@types/expo__vector-icons": "^6.2.2",
     "@types/jest": "^22.2.2",
     "@types/react": "^16.1.0",
     "@types/react-native": "^0.52.21",
+    "@types/react-navigation": "^1.5.9",
     "@types/react-test-renderer": "^16.0.0",
     "jest-expo": "27.0.0",
     "jest-junit": "^3.7.0",
