@@ -10,6 +10,7 @@
     "@types/react-native": "^0.52.21",
     "@types/react-navigation": "^1.5.9",
     "@types/react-test-renderer": "^16.0.0",
+    "husky": "^0.14.3",
     "jest-expo": "27.0.0",
     "jest-junit": "^3.7.0",
     "prettier": "1.12.1",
@@ -68,5 +69,10 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "es5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn run format lint"
+    }
   }
 }

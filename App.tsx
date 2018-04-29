@@ -24,7 +24,7 @@ const RootStack = TabNavigator(
   },
   {
     navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, tintColor}) => {
+      tabBarIcon: ({ focused, tintColor }) => {
         const { routeName } = navigation.state;
         let iconName = '';
         if (routeName === 'UserImages') {
@@ -36,7 +36,11 @@ const RootStack = TabNavigator(
         }
 
         return (
-          <MaterialCommunityIcons name={iconName} size={25} color={tintColor || ''} />
+          <MaterialCommunityIcons
+            name={iconName}
+            size={25}
+            color={tintColor || ''}
+          />
         );
       },
     }),
