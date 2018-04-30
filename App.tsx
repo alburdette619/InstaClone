@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TabNavigator, TabBarBottom } from 'react-navigation';
+import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 import { StyleSheet, Text, View } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as screens from './src/screens';
@@ -10,7 +10,7 @@ export default class App extends React.Component<{}> {
   }
 }
 
-const RootStack = TabNavigator(
+const MainStack = TabNavigator(
   {
     UserImages: {
       screen: screens.UserImages,
@@ -52,6 +52,21 @@ const RootStack = TabNavigator(
     tabBarPosition: 'bottom',
     animationEnabled: true,
     swipeEnabled: true,
+  }
+);
+
+const RootStack = StackNavigator(
+  {
+    Main: {
+      screen: MainStack,
+    },
+    ImageModal: {
+      screen: screens.ImageModal,
+    },
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none',
   }
 );
 
