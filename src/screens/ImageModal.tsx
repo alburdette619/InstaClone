@@ -20,7 +20,7 @@ const ImageModal = (props: CommonProps) => {
         color="white"
         onPress={() => navigation.goBack()}
         size={24}
-        containerStyle={{ margin: 4, alignSelf: 'flex-start' }}
+        containerStyle={{ margin: 8, alignSelf: 'flex-end' }}
       />
       <Image source={source} resizeMode="contain" style={{ flex: 1 }} />
     </View>

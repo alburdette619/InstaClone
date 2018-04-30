@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 import { StyleSheet, Text, View } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as screens from './src/screens';
 
 export default class App extends React.Component<{}> {
@@ -10,7 +9,7 @@ export default class App extends React.Component<{}> {
   }
 }
 
-const MainStack = TabNavigator(
+const MainStack = StackNavigator(
   {
     UserImages: {
       screen: screens.UserImages,
@@ -23,35 +22,9 @@ const MainStack = TabNavigator(
     },
   },
   {
-    navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, tintColor }) => {
-        const { routeName } = navigation.state;
-        let iconName = '';
-        if (routeName === 'UserImages') {
-          iconName = 'image-multiple';
-        } else if (routeName === 'AddImage') {
-          iconName = 'plus-box';
-        } else if (routeName === 'UserAccount') {
-          iconName = 'account-box';
-        }
-
-        return (
-          <MaterialCommunityIcons
-            name={iconName}
-            size={25}
-            color={tintColor || ''}
-          />
-        );
-      },
-    }),
-    tabBarOptions: {
-      activeTintColor: '#19a0d4',
-      inactiveTintColor: 'gray',
-    },
-    tabBarComponent: TabBarBottom,
-    tabBarPosition: 'bottom',
-    animationEnabled: true,
-    swipeEnabled: true,
+    initialRouteName: 'UserImages',
+    headerMode: 'float',
+    headerTransitionPreset: 'fade-in-place',
   }
 );
 
