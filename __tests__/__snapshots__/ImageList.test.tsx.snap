@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    data={
+      Array [
+        Object {
+          "uri": "https://picsum.photos/200/300/?random",
+        },
+        Object {
+          "uri": "https://picsum.photos/200/300/?random",
+        },
+        Object {
+          "uri": "https://picsum.photos/200/300/?random",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    extraData={0}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    invertStickyHeaders={undefined}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={3}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "height": 0,
+                "width": 0,
+              }
+            }
+          >
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              collapsable={undefined}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "white",
+                  "borderWidth": 1,
+                  "flex": 1,
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Image
+                resizeMode="cover"
+                source={
+                  Object {
+                    "uri": "https://picsum.photos/200/300/?random",
+                  }
+                }
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "height": 0,
+                "width": 0,
+              }
+            }
+          >
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              collapsable={undefined}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "white",
+                  "borderWidth": 1,
+                  "flex": 1,
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Image
+                resizeMode="cover"
+                source={
+                  Object {
+                    "uri": "https://picsum.photos/200/300/?random",
+                  }
+                }
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "height": 0,
+                "width": 0,
+              }
+            }
+          >
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              collapsable={undefined}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "borderColor": "white",
+                  "borderWidth": 1,
+                  "flex": 1,
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Image
+                resizeMode="cover"
+                source={
+                  Object {
+                    "uri": "https://picsum.photos/200/300/?random",
+                  }
+                }
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

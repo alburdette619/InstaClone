@@ -1,13 +1,34 @@
 {
   "name": "InstaClone",
   "version": "0.1.0",
-  "private": true,
+  "main": "./node_modules/react-native-scripts-ts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts-ts start",
+    "eject": "react-native-scripts-ts eject",
+    "android": "react-native-scripts-ts android",
+    "ios": "react-native-scripts-ts ios",
+    "test": "jest",
+    "lint": "tslint -c tslint.json src/**.{tx,tsx} App.tsx --fix",
+    "ci-lint": "tslint -c tslint.json src/**.{tx,tsx} App.tsx",
+    "lint-check": "tslint-config-prettier-check ./tslint.json",
+    "format": "prettier --write src/**.{tx,tsx} App.tsx",
+    "ci-format": "prettier --list-different src/**.{tx,tsx} App.tsx"
+  },
+  "dependencies": {
+    "expo": "^27.0.0",
+    "react": "16.3.1",
+    "react-native":
+      "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
+    "react-native-elements": "^0.19.1",
+    "react-navigation": "^1.5.11"
+  },
   "devDependencies": {
     "@types/expo": "^25.0.9",
     "@types/expo__vector-icons": "^6.2.2",
     "@types/jest": "^22.2.2",
     "@types/react": "^16.1.0",
     "@types/react-native": "^0.52.21",
+    "@types/react-native-elements": "^0.18.0",
     "@types/react-navigation": "^1.5.9",
     "@types/react-test-renderer": "^16.0.0",
     "husky": "^0.14.3",
@@ -24,47 +45,18 @@
     "tslint-config-prettier": "^1.12.0",
     "typescript": "^2.8.1"
   },
-  "main": "./node_modules/react-native-scripts-ts/build/bin/crna-entry.js",
-  "scripts": {
-    "start": "react-native-scripts-ts start",
-    "eject": "react-native-scripts-ts eject",
-    "android": "react-native-scripts-ts android",
-    "ios": "react-native-scripts-ts ios",
-    "test": "jest",
-    "lint": "tslint -c tslint.json src/**.{tx,tsx} App.tsx --fix",
-    "ci-lint": "tslint -c tslint.json src/**.{tx,tsx} App.tsx",
-    "lint-check": "tslint-config-prettier-check ./tslint.json",
-    "format": "prettier --write src/**.{tx,tsx} App.tsx",
-    "ci-format": "prettier --list-different src/**.{tx,tsx} App.tsx"
-  },
   "jest": {
     "globals": {
       "ts-jest": {
         "useBabelrc": true
       }
     },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
     "preset": "jest-expo",
-    "testMatch": [
-      "**/__tests__/**/*.[tj]s?(x)",
-      "**/?(*.)(spec|test).[tj]s?(x)"
-    ],
+    "testMatch": ["**/__tests__/**/*.test.[tj]s?(x)"],
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     }
-  },
-  "dependencies": {
-    "expo": "^27.0.0",
-    "react": "16.3.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
-    "react-navigation": "^1.5.11"
   },
   "prettier": {
     "singleQuote": true,
