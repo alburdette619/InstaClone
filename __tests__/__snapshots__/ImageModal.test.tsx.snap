@@ -37,8 +37,8 @@ exports[`renders without crashing 1`] = `
           "justifyContent": "center",
         },
         Object {
-          "alignSelf": "flex-start",
-          "margin": 4,
+          "alignSelf": "flex-end",
+          "margin": 8,
         },
       ]
     }
