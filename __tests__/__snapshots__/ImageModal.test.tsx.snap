@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "stretch",
+      "backgroundColor": "black",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        false,
+        false,
+        false,
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "justifyContent": "center",
+        },
+        Object {
+          "alignSelf": "flex-start",
+          "margin": 4,
+        },
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "white",
+            "fontSize": 24,
+          },
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            undefined,
+          ],
+          Object {
+            "fontFamily": "Material Design Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <Image
+    resizeMode="contain"
+    source={
+      Object {
+        "uri": "https://picsum.photos/200/300/?random",
+      }
+    }
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+</View>
+`;

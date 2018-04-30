@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, TouchableOpacity } from 'react-native';
-import SingleImageProps from '../types/interfaces';
+import { SingleImageProps } from '../types/interfaces';
 
 const LightBoxImage = (props: SingleImageProps) => {
   const { navigation, source } = props;

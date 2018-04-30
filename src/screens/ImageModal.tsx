@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Image, ImagePropertiesSourceOptions } from 'react-native';
 import { NavigationScreenProp } from 'react-navigation';
 import { Icon } from 'react-native-elements';
-import SingleImageProps from '../types/interfaces';
+import CommonProps from '../types/interfaces';
 
-const ImageModal = (props: SingleImageProps) => {
+const ImageModal = (props: CommonProps) => {
   const { navigation } = props;
   const {
     state: {
