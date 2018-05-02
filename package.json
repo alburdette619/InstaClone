@@ -17,13 +17,12 @@
   "dependencies": {
     "expo": "^27.0.0",
     "react": "16.3.1",
-    "react-native":
-      "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
     "react-native-elements": "^0.19.1",
     "react-navigation": "^1.5.11"
   },
   "devDependencies": {
-    "@types/expo": "^25.0.9",
+    "@types/expo": "^26.0.1",
     "@types/expo__vector-icons": "^6.2.2",
     "@types/jest": "^22.2.2",
     "@types/react": "^16.1.0",
@@ -51,9 +50,18 @@
         "useBabelrc": true
       }
     },
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
     "preset": "jest-expo",
-    "testMatch": ["**/__tests__/**/*.test.[tj]s?(x)"],
+    "testMatch": [
+      "**/__tests__/**/*.test.[tj]s?(x)"
+    ],
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     }
