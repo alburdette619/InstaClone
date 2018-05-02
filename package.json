@@ -8,16 +8,17 @@
     "android": "react-native-scripts-ts android",
     "ios": "react-native-scripts-ts ios",
     "test": "jest",
-    "lint": "tslint -c tslint.json src/**.{tx,tsx} App.tsx --fix",
-    "ci-lint": "tslint -c tslint.json src/**.{tx,tsx} App.tsx",
+    "lint": "tslint -c tslint.json src/**/*.{tx,tsx} App.tsx --fix",
+    "ci-lint": "tslint -c tslint.json src/**/*.{tx,tsx} App.tsx",
     "lint-check": "tslint-config-prettier-check ./tslint.json",
-    "format": "prettier --write src/**.{tx,tsx} App.tsx",
-    "ci-format": "prettier --list-different src/**.{tx,tsx} App.tsx"
+    "format": "prettier --write src/**/*.{tx,tsx} App.tsx",
+    "ci-format": "prettier --list-different src/**/*.{tx,tsx} App.tsx"
   },
   "dependencies": {
     "expo": "^27.0.0",
     "react": "16.3.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
+    "react-native":
+      "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
     "react-native-elements": "^0.19.1",
     "react-navigation": "^1.5.11"
   },
@@ -50,18 +51,9 @@
         "useBabelrc": true
       }
     },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
     "preset": "jest-expo",
-    "testMatch": [
-      "**/__tests__/**/*.test.[tj]s?(x)"
-    ],
+    "testMatch": ["**/__tests__/**/*.test.[tj]s?(x)"],
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     }
