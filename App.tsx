@@ -14,9 +14,6 @@ const MainStack = StackNavigator(
     UserImages: {
       screen: screens.UserImages,
     },
-    AddImage: {
-      screen: screens.AddImage,
-    },
     UserAccount: {
       screen: screens.UserAccount,
     },
