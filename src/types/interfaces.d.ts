@@ -12,3 +12,8 @@ export interface SingleImageProps extends CommonProps {
 export interface ImageListProps extends CommonProps {
   sources: ImageURISource[];
 }
+
+export interface AddImageResult {
+  cancelled: boolean;
+  uri: string;
+}
