@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import {
   AsyncStorage,
-  View,
-  Text,
   ImageURISource,
+  Text,
   TouchableOpacity,
+  View,
 } from 'react-native';
 import { Avatar, Divider, Icon } from 'react-native-elements';
-import { Permissions, ImagePicker } from 'expo';
 import { NavigationParams } from 'react-navigation';
 import ImageList from '../components/ImageList';
 import CommonProps from '../types/interfaces';
+import showImageSourceAlert from '../utils/addImage';
 
 interface UserImagesState {
   sources: string[];
@@ -28,46 +28,13 @@ class UserImages extends Component<CommonProps, UserImagesState> {
     };
   }
 
-  addImage(image: ImagePicker.ImageResult, params: NavigationParams) {
-    const { cancelled } = image;
-    if (!cancelled) {
-      const { uri } = image as ImagePicker.ImageInfo;
-
-      params.addToSources(uri);
-
-      AsyncStorage.getItem('sources', (err, result) => {
-        const parsedResult = result ? JSON.parse(result) : [];
-        AsyncStorage.setItem(
-          'sources',
-          JSON.stringify(parsedResult.concat(uri))
-        );
-      });
-    }
-  }
-
-  async addFromCameraRoll(params: NavigationParams) {
-    const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-    if (status === 'granted') {
-      const newImage = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: 'Images',
-      });
-
-      this.addImage(newImage, params);
-    }
-  }
-
-  async addFromCamera(params: NavigationParams) {
-    const { status } = await Permissions.askAsync(Permissions.CAMERA);
-    if (status === 'granted') {
-      const newImage = await ImagePicker.launchCameraAsync();
-
-      this.addImage(newImage, params);
-    }
-  }
-
   addToSources = (uri: string) => {
     this.setState({ sources: this.state.sources.concat([uri]) });
   };
+
+  showImageModal(params: NavigationParams) {
+    showImageSourceAlert(params.addToSources);
+  }
 
   static navigationOptions = ({ navigation }: CommonProps) => {
     const params = navigation.state.params || {};
@@ -75,37 +42,21 @@ class UserImages extends Component<CommonProps, UserImagesState> {
     return {
       title: 'Images',
       headerRight: (
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-evenly',
-            alignItems: 'center',
-          }}
-        >
-          <Icon
-            name="camera"
-            size={32}
-            type="material-community"
-            onPress={() => params.addFromCamera(params)}
-          />
-          <Icon
-            name="file-image"
-            size={32}
-            type="material-community"
-            onPress={() => params.addFromCameraRoll(params)}
-            containerStyle={{ marginHorizontal: 16 }}
-          />
-        </View>
+        <Icon
+          name="plus"
+          size={32}
+          type="material-community"
+          containerStyle={{ padding: 16 }}
+          onPress={() => params.showImageModal(params)}
+        />
       ),
     };
   };
 
   componentWillMount() {
     this.props.navigation.setParams({
-      addFromCameraRoll: this.addFromCameraRoll,
-      addFromCamera: this.addFromCamera,
-      addImage: this.addImage,
       addToSources: this.addToSources,
+      showImageModal: this.showImageModal,
     });
   }
 
