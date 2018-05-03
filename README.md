@@ -11,7 +11,7 @@ A limited functionality Instagram Clone for personal image viewing. The applicat
 
 Download [the Expo Client App](http://onelink.to/jcpnyt). Once installed, you can then find the app at the following link or by scanning the provided QR code with the Expo Client App.
 
-[InstaClone on Expo](https://expo.io/@alburdet619/netinfo-tester)
+[InstaClone on Expo](https://expo.io/@alburdet619/instaclone)
 
 ![QR]
 
