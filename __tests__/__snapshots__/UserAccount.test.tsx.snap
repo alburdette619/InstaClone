@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests the states of UserAccount renders without crashing with an image source 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    enabled={true}
+    keyboardVerticalOffset={0}
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "space-between",
+        "marginHorizontal": 8,
+        "marginVertical": 16,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          undefined,
+          Object {
+            "bottom": 0,
+          },
+        ]
+      }
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignSelf": "center",
+            "backgroundColor": "transparent",
+            "borderRadius": 180,
+            "height": 360,
+            "opacity": 1,
+            "paddingBottom": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+            "width": 360,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "backgroundColor": "rgba(0,0,0,0.2)",
+                "bottom": 0,
+                "flex": 1,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "borderRadius": 180,
+              },
+              undefined,
+            ]
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": "https://picsum.photos/200/300/?random",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "height": 360,
+                  "width": 360,
+                },
+                Object {
+                  "borderRadius": 180,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+      <TextInput
+        allowFontScaling={true}
+        autoCorrect={false}
+        onChangeText={[Function]}
+        onEndEditing={[Function]}
+        placeholder="Username"
+        returnKeyType="done"
+        style={
+          Object {
+            "fontSize": 28,
+            "height": 60,
+            "marginTop": 32,
+          }
+        }
+        value="TEST"
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Tests the states of UserAccount renders without crashing with the default icon source 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    enabled={true}
+    keyboardVerticalOffset={0}
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "space-between",
+        "marginHorizontal": 8,
+        "marginVertical": 16,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          undefined,
+          Object {
+            "bottom": 0,
+          },
+        ]
+      }
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        collapsable={undefined}
+        hasTVPreferredFocus={undefined}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignSelf": "center",
+            "backgroundColor": "transparent",
+            "borderRadius": 180,
+            "height": 360,
+            "opacity": 1,
+            "paddingBottom": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+            "width": 360,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "backgroundColor": "rgba(0,0,0,0.2)",
+                "bottom": 0,
+                "flex": 1,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "borderRadius": 180,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            onPress={undefined}
+            style={
+              Array [
+                false,
+                false,
+                false,
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "justifyContent": "center",
+                },
+                undefined,
+              ]
+            }
+            underlayColor="white"
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#19a0d4",
+                    "fontSize": 320,
+                  },
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                    undefined,
+                  ],
+                  Object {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+      <TextInput
+        allowFontScaling={true}
+        autoCorrect={false}
+        onChangeText={[Function]}
+        onEndEditing={[Function]}
+        placeholder="Username"
+        returnKeyType="done"
+        style={
+          Object {
+            "fontSize": 28,
+            "height": 60,
+            "marginTop": 32,
+          }
+        }
+        value="TEST"
+      />
+    </View>
+  </View>
+</View>
+`;

@@ -44,13 +44,6 @@ const addImage = (image: ImagePicker.ImageResult) => {
   let uri: string = '';
   if (!cancelled) {
     ({ uri } = image as ImagePicker.ImageInfo);
-
-    // addToSources(uri);
-
-    AsyncStorage.getItem('sources', (err, result) => {
-      const parsedResult = result ? JSON.parse(result) : [];
-      AsyncStorage.setItem('sources', JSON.stringify(parsedResult.concat(uri)));
-    });
   }
 
   return { cancelled, uri } as AddImageResult;
