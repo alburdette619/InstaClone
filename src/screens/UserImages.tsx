@@ -10,7 +10,7 @@ import { Avatar, Divider, Icon } from 'react-native-elements';
 import { NavigationParams } from 'react-navigation';
 import ImageList from '../components/ImageList';
 import CommonProps from '../types/interfaces';
-import showImageSourceAlert from '../utils/imageSourceAlert';
+import showImageSourceAlert from '../utils/addImage';
 
 interface UserImagesState {
   sources: string[];
