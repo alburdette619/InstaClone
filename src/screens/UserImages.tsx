@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   chevronContainerStyle: { marginHorizontal: 8 },
   username: { fontSize: 24, marginHorizontal: 16 },
   divider: { marginVertical: 1 },
-  headerRightIcon: { padding: 16 },
+  headerRightIcon: { paddingHorizontal: 16 },
 });
 
 export default UserImages;
