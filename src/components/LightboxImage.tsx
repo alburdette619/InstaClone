@@ -1,5 +1,10 @@
-import React, { Component } from 'react';
-import { Image, TouchableOpacity } from 'react-native';
+import React from 'react';
+import {
+  Image,
+  ImageURISource,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import { SingleImageProps } from '../types/interfaces';
 
 const LightBoxImage = (props: SingleImageProps) => {
@@ -9,11 +14,20 @@ const LightBoxImage = (props: SingleImageProps) => {
   return (
     <TouchableOpacity
       onPress={() => onImagePress()}
-      style={{ flex: 1, borderColor: 'white', borderWidth: 1 }}
+      style={[styles.touchableContainer, styles.flex]}
     >
-      <Image resizeMode="cover" source={source} style={{ flex: 1 }} />
+      <Image
+        resizeMode="cover"
+        source={source as ImageURISource}
+        style={styles.flex}
+      />
     </TouchableOpacity>
   );
 };
+
+const styles = StyleSheet.create({
+  flex: { flex: 1 },
+  touchableContainer: { borderColor: 'white', borderWidth: 1 },
+});
 
 export default LightBoxImage;

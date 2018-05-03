@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Image, ImagePropertiesSourceOptions } from 'react-native';
-import { NavigationScreenProp } from 'react-navigation';
+import { Image, StyleSheet, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import CommonProps from '../types/interfaces';
 
@@ -13,18 +12,24 @@ const ImageModal = (props: CommonProps) => {
   } = navigation;
 
   return (
-    <View style={{ flex: 1, backgroundColor: 'black', alignItems: 'stretch' }}>
+    <View style={[styles.container, styles.flex]}>
       <Icon
         type="material-community"
         name="close"
         color="white"
         onPress={() => navigation.goBack()}
         size={24}
-        containerStyle={{ margin: 8, alignSelf: 'flex-end' }}
+        containerStyle={styles.iconContainerStyle}
       />
-      <Image source={source} resizeMode="contain" style={{ flex: 1 }} />
+      <Image source={source} resizeMode="contain" style={styles.flex} />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  flex: { flex: 1 },
+  container: { backgroundColor: 'black', alignItems: 'stretch' },
+  iconContainerStyle: { margin: 8, alignSelf: 'flex-end' },
+});
 
 export default ImageModal;

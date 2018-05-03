@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import UserAccount from '../src/screens/UserAccount';
-import * as mocks from './__mocks__/mocks';
+import UserAccount from '../../src/screens/UserAccount';
+import * as mocks from '../__mocks__/mocks';
 
 describe('Tests the states of UserAccount', () => {
   it('renders without crashing with an image source', () => {

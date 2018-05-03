@@ -1,6 +1,5 @@
-import { Alert, AsyncStorage } from 'react-native';
-import { Permissions, ImagePicker } from 'expo';
-import { NavigationParams } from 'react-navigation';
+import { ImagePicker, Permissions } from 'expo';
+import { Alert } from 'react-native';
 import { AddImageResult } from '../types/interfaces';
 
 const showImageSourceAlert = (onImageSave: Function) => {

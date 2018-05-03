@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, FlatList, ImagePropertiesSourceOptions } from 'react-native';
-import LightboxImage from './LightboxImage';
-import { NavigationScreenProp } from 'react-navigation';
+import { FlatList, StyleSheet, View } from 'react-native';
 import { ImageListProps } from '../types/interfaces';
+import LightboxImage from './LightboxImage';
 
 interface ImageListState {
   imageSize: number;
@@ -23,7 +22,7 @@ class ImageList extends Component<ImageListProps, ImageListState> {
 
     return (
       <View
-        style={{ flex: 1 }}
+        style={styles.container}
         onLayout={({
           nativeEvent: {
             layout: { width },
@@ -52,5 +51,9 @@ class ImageList extends Component<ImageListProps, ImageListState> {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+});
 
 export default ImageList;
