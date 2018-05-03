@@ -36,7 +36,6 @@ class UserImages extends Component<CommonProps, UserImagesState> {
       params.addToSources(uri);
 
       AsyncStorage.getItem('sources', (err, result) => {
-        console.log('loading', err, result);
         const parsedResult = result ? JSON.parse(result) : [];
         AsyncStorage.setItem(
           'sources',
@@ -120,7 +119,6 @@ class UserImages extends Component<CommonProps, UserImagesState> {
         AsyncStorage.multiGet(keys, (err?: Error[], stores?: string[][]) => {
           if (stores && !err) {
             stores.forEach((results: string[]) => {
-              console.log('load', results);
               const key = results[0];
 
               // computed property names seems to be a tricky spot for TS

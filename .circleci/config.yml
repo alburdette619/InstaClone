@@ -88,7 +88,7 @@ jobs:
           command: |
             export PATH="$PATH:$( yarn global bin )"
             exp login --username $EXPO_USER_NAME --password $EXPO_PASSWORD
-            exp publish -s $EXPO_USER_NAME -q
+            exp publish -s $EXPO_DISTRO_ENDPOINT -q
 
 workflows:
   version: 2
