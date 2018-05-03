@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   AsyncStorage,
   ImageURISource,
+  StyleSheet,
   Text,
   TouchableOpacity,
   View,
@@ -10,7 +11,7 @@ import { Avatar, Divider, Icon } from 'react-native-elements';
 import { NavigationParams } from 'react-navigation';
 import ImageList from '../components/ImageList';
 import CommonProps from '../types/interfaces';
-import addImage from '../utils/addImage';
+import showImageSourceAlert from '../utils/addImage';
 import getAvatarSourceProp from '../utils/getAvatarSource';
 
 interface UserImagesState {
@@ -41,7 +42,7 @@ class UserImages extends Component<CommonProps, UserImagesState> {
   };
 
   showImageModal(params: NavigationParams) {
-    addImage(params.addToSources);
+    showImageSourceAlert(params.addToSources);
   }
 
   static navigationOptions = ({ navigation }: CommonProps) => {
@@ -54,7 +55,7 @@ class UserImages extends Component<CommonProps, UserImagesState> {
           name="plus"
           size={32}
           type="material-community"
-          containerStyle={{ padding: 16 }}
+          containerStyle={styles.headerRightIcon}
           onPress={() => params.showImageModal(params)}
         />
       ),
@@ -114,12 +115,7 @@ class UserImages extends Component<CommonProps, UserImagesState> {
     const { navigation } = this.props;
 
     return (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: 'white',
-        }}
-      >
+      <View style={[styles.container, styles.background]}>
         <TouchableOpacity
           onPress={() =>
             navigation.push('UserAccount', {
@@ -129,41 +125,25 @@ class UserImages extends Component<CommonProps, UserImagesState> {
             })
           }
         >
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              width: '100%',
-              padding: 8,
-            }}
-          >
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'flex-start',
-                alignItems: 'center',
-              }}
-            >
+          <View style={styles.userHeader}>
+            <View style={styles.userInfo}>
               <Avatar
                 medium
                 rounded
-                overlayContainerStyle={{ backgroundColor: 'white' }}
+                overlayContainerStyle={styles.background}
                 {...getAvatarSourceProp(this.state.avatarSource) as any}
               />
-              <Text style={{ fontSize: 24, marginHorizontal: 16 }}>
-                {username}
-              </Text>
+              <Text style={styles.username}>{username}</Text>
             </View>
             <Icon
               name="chevron-right"
               size={32}
               type="material-community"
-              containerStyle={{ marginHorizontal: 8 }}
+              containerStyle={styles.chevronContainerStyle}
             />
           </View>
         </TouchableOpacity>
-        <Divider style={{ marginVertical: 1 }} />
+        <Divider style={styles.divider} />
         <ImageList
           sources={this.mapSourcesToImageURISource()}
           navigation={navigation}
@@ -172,5 +152,28 @@ class UserImages extends Component<CommonProps, UserImagesState> {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  background: { backgroundColor: 'white' },
+  container: {
+    flex: 1,
+  },
+  userHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    padding: 8,
+  },
+  userInfo: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  chevronContainerStyle: { marginHorizontal: 8 },
+  username: { fontSize: 24, marginHorizontal: 16 },
+  divider: { marginVertical: 1 },
+  headerRightIcon: { padding: 16 },
+});
 
 export default UserImages;

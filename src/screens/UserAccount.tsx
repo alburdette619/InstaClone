@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
+  ImageURISource,
+  KeyboardAvoidingView,
+  StyleSheet,
   TextInput,
   View,
-  KeyboardAvoidingView,
-  ImageURISource,
-  AsyncStorage,
 } from 'react-native';
 import { Avatar } from 'react-native-elements';
-import CommonProps, { SingleImageProps } from '../types/interfaces';
+import CommonProps from '../types/interfaces';
 import addImage from '../utils/addImage';
 import getAvatarSourceProp from '../utils/getAvatarSource';
 
@@ -54,25 +55,12 @@ class UserAccount extends Component<CommonProps, UserAccountState> {
     const { currentUsername, currentAvatar } = this.state;
 
     return (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: 'white',
-        }}
-      >
-        <KeyboardAvoidingView
-          behavior="position"
-          style={{
-            flex: 1,
-            justifyContent: 'space-between',
-            marginHorizontal: 8,
-            marginVertical: 16,
-          }}
-        >
+      <View style={styles.container}>
+        <KeyboardAvoidingView behavior="position" style={styles.innerContainer}>
           <Avatar
             height={360}
             rounded
-            containerStyle={{ alignSelf: 'center' }}
+            containerStyle={styles.avatarContainerStyle}
             onPress={() =>
               addImage((uri: string) => {
                 this.setAvatar(uri);
@@ -85,11 +73,7 @@ class UserAccount extends Component<CommonProps, UserAccountState> {
             autoCorrect={false}
             placeholder="Username"
             returnKeyType="done"
-            style={{
-              height: 60,
-              fontSize: 28,
-              marginTop: 32,
-            }}
+            style={styles.input}
             onChangeText={text => this.setState({ currentUsername: text })}
             onEndEditing={event => this.setUsername(event.nativeEvent.text)}
           />
@@ -98,5 +82,24 @@ class UserAccount extends Component<CommonProps, UserAccountState> {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  innerContainer: {
+    flex: 1,
+    justifyContent: 'space-between',
+    marginHorizontal: 8,
+    marginVertical: 16,
+  },
+  avatarContainerStyle: { alignSelf: 'center' },
+  input: {
+    height: 60,
+    fontSize: 28,
+    marginTop: 32,
+  },
+});
 
 export default UserAccount;
