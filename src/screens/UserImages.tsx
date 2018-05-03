@@ -33,10 +33,9 @@ class UserImages extends Component<CommonProps, UserImagesState> {
   addToSources = (uri: string) => {
     AsyncStorage.getItem('sources', (err, result) => {
       const parsedResult = result ? JSON.parse(result) : [];
-      AsyncStorage.setItem(
-        'sources',
-        JSON.stringify(parsedResult.concat(uri)),
-        () => this.setState({ sources: this.state.sources.concat([uri]) })
+      parsedResult.unshift(uri);
+      AsyncStorage.setItem('sources', JSON.stringify(parsedResult), () =>
+        this.setState({ sources: parsedResult })
       );
     });
   };
