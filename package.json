@@ -8,11 +8,11 @@
     "android": "react-native-scripts-ts android",
     "ios": "react-native-scripts-ts ios",
     "test": "jest",
-    "lint": "tslint -c tslint.json src/**.{tx,tsx} App.tsx --fix",
-    "ci-lint": "tslint -c tslint.json src/**.{tx,tsx} App.tsx",
+    "lint": "tslint -c tslint.json src/**/*.{tx,tsx} App.tsx --fix",
+    "ci-lint": "tslint -c tslint.json src/**/*.{tx,tsx} App.tsx",
     "lint-check": "tslint-config-prettier-check ./tslint.json",
-    "format": "prettier --write src/**.{tx,tsx} App.tsx",
-    "ci-format": "prettier --list-different src/**.{tx,tsx} App.tsx"
+    "format": "prettier --write src/**/*.{tx,tsx} App.tsx",
+    "ci-format": "prettier --list-different src/**/*.{tx,tsx} App.tsx"
   },
   "dependencies": {
     "expo": "^27.0.0",
@@ -23,7 +23,7 @@
     "react-navigation": "^1.5.11"
   },
   "devDependencies": {
-    "@types/expo": "^25.0.9",
+    "@types/expo": "^26.0.1",
     "@types/expo__vector-icons": "^6.2.2",
     "@types/jest": "^22.2.2",
     "@types/react": "^16.1.0",
