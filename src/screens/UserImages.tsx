@@ -10,7 +10,8 @@ import { Avatar, Divider, Icon } from 'react-native-elements';
 import { NavigationParams } from 'react-navigation';
 import ImageList from '../components/ImageList';
 import CommonProps from '../types/interfaces';
-import showImageSourceAlert from '../utils/addImage';
+import addImage from '../utils/addImage';
+import getAvatarSourceProp from '../utils/getAvatarSource';
 
 interface UserImagesState {
   sources: string[];
@@ -29,11 +30,18 @@ class UserImages extends Component<CommonProps, UserImagesState> {
   }
 
   addToSources = (uri: string) => {
-    this.setState({ sources: this.state.sources.concat([uri]) });
+    AsyncStorage.getItem('sources', (err, result) => {
+      const parsedResult = result ? JSON.parse(result) : [];
+      AsyncStorage.setItem(
+        'sources',
+        JSON.stringify(parsedResult.concat(uri)),
+        () => this.setState({ sources: this.state.sources.concat([uri]) })
+      );
+    });
   };
 
   showImageModal(params: NavigationParams) {
-    showImageSourceAlert(params.addToSources);
+    addImage(params.addToSources);
   }
 
   static navigationOptions = ({ navigation }: CommonProps) => {
@@ -53,14 +61,7 @@ class UserImages extends Component<CommonProps, UserImagesState> {
     };
   };
 
-  componentWillMount() {
-    this.props.navigation.setParams({
-      addToSources: this.addToSources,
-      showImageModal: this.showImageModal,
-    });
-  }
-
-  componentDidMount() {
+  load = () => {
     AsyncStorage.getAllKeys((err, keys) => {
       if (keys && !err) {
         if (!keys.includes('username')) {
@@ -87,6 +88,18 @@ class UserImages extends Component<CommonProps, UserImagesState> {
         });
       }
     });
+  };
+
+  /* Life cycle methods */
+  componentWillMount() {
+    this.props.navigation.setParams({
+      addToSources: this.addToSources,
+      showImageModal: this.showImageModal,
+    });
+  }
+
+  componentDidMount() {
+    this.load();
   }
 
   mapSourcesToImageURISource = () => {
@@ -95,23 +108,6 @@ class UserImages extends Component<CommonProps, UserImagesState> {
     });
     return mappedSources as ImageURISource[];
   };
-
-  getAvatarSourceProp() {
-    const { avatarSource } = this.state;
-
-    if (avatarSource === 'account-outline') {
-      return {
-        icon: {
-          name: avatarSource,
-          color: '#19a0d4',
-          type: 'material-community',
-          size: 32,
-        },
-      };
-    }
-
-    return { source: { uri: avatarSource } as ImageURISource };
-  }
 
   render() {
     const { sources, avatarSource, username } = this.state;
@@ -126,7 +122,11 @@ class UserImages extends Component<CommonProps, UserImagesState> {
       >
         <TouchableOpacity
           onPress={() =>
-            navigation.push('UserAccount', { avatarSource, username })
+            navigation.push('UserAccount', {
+              username,
+              source: avatarSource,
+              reload: this.load,
+            })
           }
         >
           <View
@@ -149,7 +149,7 @@ class UserImages extends Component<CommonProps, UserImagesState> {
                 medium
                 rounded
                 overlayContainerStyle={{ backgroundColor: 'white' }}
-                {...this.getAvatarSourceProp()}
+                {...getAvatarSourceProp(this.state.avatarSource) as any}
               />
               <Text style={{ fontSize: 24, marginHorizontal: 16 }}>
                 {username}
