@@ -1,5 +1,5 @@
-import { NavigationScreenProp } from 'react-navigation';
 import { ImageURISource } from 'react-native';
+import { NavigationScreenProp } from 'react-navigation';
 
 export const nav: NavigationScreenProp<any, any> = {
   navigate: jest.fn(),

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import LightboxImage from '../src/components/LightboxImage';
-import * as mocks from './__mocks__/mocks';
+import LightboxImage from '../../src/components/LightboxImage';
+import * as mocks from '../__mocks__/mocks';
 
 it('renders without crashing', () => {
   const rendered = renderer
