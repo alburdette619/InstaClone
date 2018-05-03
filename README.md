@@ -1,5 +1,4 @@
 [![CircleCI](https://circleci.com/gh/alburdette619/InstaClone/tree/master.svg?style=svg)](https://circleci.com/gh/alburdette619/InstaClone/tree/master)
-![GitHub top language](https://img.shields.io/github/languages/top/badges/shields.svg)
 
 # InstaClone
 
