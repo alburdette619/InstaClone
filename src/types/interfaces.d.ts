@@ -6,7 +6,7 @@ export default interface CommonProps {
 }
 
 export interface SingleImageProps extends CommonProps {
-  source: ImageURISource;
+  source: ImageURISource | string;
 }
 
 export interface ImageListProps extends CommonProps {
